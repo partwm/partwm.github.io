@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG" />
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG" />
+  <meta property="og:url" content="URL OF THE WEBSITE" />
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>PART-WM</title>
+  <link rel="icon" type="image/x-icon" href="static/images/robot_icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <!-- <link rel="stylesheet" href="static/css/fontawesome.all.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+
+  <script>
+    async function copyBibTeX() {
+      const codeEl = document.getElementById("bibtex-code");
+      const btn = document.getElementById("copy-bibtex-btn");
+      const textEl = document.getElementById("copy-bibtex-text");
+      const iconEl = document.getElementById("copy-bibtex-icon");
+
+      const textToCopy = codeEl.innerText;
+
+      try {
+        await navigator.clipboard.writeText(textToCopy);
+
+        textEl.textContent = "Copied!";
+        iconEl.className = "fas fa-check";
+        btn.style.background = "#e8f5e9";
+
+        setTimeout(() => {
+          textEl.textContent = "Copy";
+          iconEl.className = "fas fa-copy";
+          btn.style.background = "#f5f5f5";
+        }, 1500);
+
+      } catch (err) {
+        textEl.textContent = "Failed";
+        iconEl.className = "fas fa-times";
+        btn.style.background = "#fdecea";
+
+        setTimeout(() => {
+          textEl.textContent = "Copy";
+          iconEl.className = "fas fa-copy";
+          btn.style.background = "#f5f5f5";
+        }, 1500);
+      }
+    }
+  </script>
+
+</head>
+
+
+
+
+<body>
+  <!----- cover ----->
+  <section class="hero is-link is-fullheight video"
+    style="overflow: hidden; position:relative; background-image: url('./static/images/cover.png'); background-size: cover; background-position: center;">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1 publication-title is-size-1-mobile" style="font-size: 6rem;">
+          PART-WM
+        </h1>
+        <h1 class="subtitle is-1 publication-title is-size-4-mobile" style="font-size: 4rem;">
+          Physics-Informed Articulated World Model
+        </h1>
+        <!-- <h1 class="is-2 is-italic is-size-4-mobile" style="font-size: 2rem; opacity: 80%;">
+          Robotics: Science and Systems (RSS) 2025
+        </h1> -->
+      </div>
+    </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========================= HERO SECTION ========================= -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="container has-text-centered">
+
+            <!-- Paper title -->
+            <h1 class="title is-1 publication-title" style="font-size: 3rem;">
+              PART-WM: Physics-Informed Articulated World Model
+            </h1>
+
+            <!-- Paper authors -->
+            <!--
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/XuAdventurer" target="_blank">Wenxuan Li<sup>1,∗</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="http://alexfrom0815.github.io" target="_blank">Hang Zhao<sup>2,∗</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Zhiyuan Yu<sup>2</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Yu Du<sup>1</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://sites.google.com/site/qinzoucn" target="_blank">Qin Zou<sup>2,4</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="https://csse.szu.edu.cn/staff/ruizhenhu/" target="_blank">Ruizhen Hu<sup>3,&dagger;</sup></a>,
+            </span>
+            <span class="author-block">
+              <a href="http://kevinkaixu.net" target="_blank">Kai Xu<sup>1,&dagger;</sup></a>,
+            </span>
+          </div>
+          -->
+
+            <!-- Author affiliations -->
+            <!--
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <sup>1</sup>National University of Defense Technology &nbsp;&nbsp;&nbsp;
+              <sup>2</sup>Wuhan University &nbsp;&nbsp;&nbsp;
+              <sup>3</sup>Shenzhen University
+            </span>
+            <span class="author-block">
+              <sup>4</sup>Guangdong Laboratory of Artificial Intelligence and Digital Economy
+            </span>
+            <span class="eql-cntrb">
+              <br><sup>*</sup>Equal contributions&nbsp;&nbsp;&nbsp;&nbsp;<sup>&dagger;</sup>Corresponding author
+            </span>
+          </div>
+          -->
+
+            <!-- Conference info -->
+            <!--
+          <div class="is-size-5 publication-authors">
+            <img
+              src="static/images/RSS_icon.png"
+              alt="icon"
+              style="width:1em; height:auto; vertical-align:middle; margin-right:0.3em; margin-top:-0.3em;"
+            />
+            <a href="https://roboticsconference.org" target="_blank">
+              <span class="author-block" style="color:#F7CE46; font-weight:bold;">
+                RSS 2025
+              </span>
+            </a>
+          </div>
+          -->
+
+            <!-- School logos -->
+            <!--
+          <div class="column has-text-centered">
+            <img src="./static/images/nudt_logo.png" style="width:32%;">
+            <img src="./static/images/whu_log.png" style="width:32%;">
+            <img src="./static/images/szu_logo.png" style="width:32%;">
+          </div>
+          -->
+
+            <!-- Links -->
+            <div class="column has-text-centered" style="margin-top: 18px;">
+              <div class="publication-links">
+
+                <!-- Paper -->
+                <!--
+              <span class="link-block">
+                <a href="./static/pdfs/pin_wm_paper.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              -->
+
+                <!-- arXiv -->
+                <!--
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2504.16693" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              -->
+
+                <!-- Code -->
+                <!--
+              <span class="link-block">
+                <a href="https://github.com/XuAdventurer/PIN-WM" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              -->
+
+                <span class="link-block">
+                  <a href="javascript:void(0)" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Coming Soon</span>
+                  </a>
+                </span>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <div style="
+  display:flex;
+  align-items:center;
+  margin:50px 0 30px 0;
+">
+
+    <div style="flex:1; height:1px; background:#e5e5e5;"></div>
+    <div style="
+    padding:0 16px;
+    font-size:1rem;
+    color:#888;
+    letter-spacing:1px;
+  ">
+      Rigid-Object Experiments
+    </div>
+
+    <div style="flex:1; height:1px; background:#e5e5e5;"></div>
+  </div> -->
+
+  <!-- ========================= RIGID-OBJECT EXPERIMENTS ========================= -->
+
+  <div style="
+  display:flex;
+  align-items:center;
+  margin:55px 0 35px 0;
+  ">
+    <div style="flex:1; height:2px; background:#d0d0d0;"></div>
+    <div style="flex:1; height:2px; background:#d0d0d0;"></div>
+  </div>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+
+        <h2 class="title is-2 has-text-centered">
+          Rigid-Object Experiments
+        </h2>
+
+        <div style="
+          width:70px;
+          height:4px;
+          background:#d06cf0;
+          margin:10px auto 30px auto;
+          border-radius:2px;
+        "></div>
+
+        <!-- Push T-object on a slippery plane -->
+        <div class="is-size-3">
+
+          <h3 class="title is-4 has-text-centered" style="margin-top: 26px; margin-bottom: 14px;">
+            Push T-object on a slippery plane
+          </h3>
+
+          <div style="
+          display:flex;
+          justify-content:center;
+          align-items:flex-start;
+          gap:24px;
+          margin-top:0;
+        ">
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/compare/push_t_slide_pinwm.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:1rem; font-weight:600; line-height:1.2;">
+                PART-WM
+              </div>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/compare/push_t_slide_baseline.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:1rem; font-weight:600; line-height:1.2;">
+                Baseline
+              </div>
+            </div>
+
+          </div>
+
+          <div style="
+          display:flex;
+          justify-content:center;
+          align-items:flex-start;
+          gap:24px;
+          margin-top:20px;
+        ">
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/compare/push_cube_slide_pinwm.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:1rem; font-weight:600; line-height:1.2;">
+                PART-WM
+              </div>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/compare/push_cube_slide_baseline.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:1rem; font-weight:600; line-height:1.2;">
+                Baseline
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Push T-object on a rough plane -->
+        <div class="is-size-3">
+
+          <h3 class="title is-4 has-text-centered" style="margin-top: 34px; margin-bottom: 14px;">
+            Push T-object on a rough plane
+          </h3>
+
+          <div style="
+          display:flex;
+          justify-content:center;
+          align-items:flex-start;
+          gap:24px;
+          margin-top:0;
+        ">
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/compare/push_t_rough_pinwm.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:1rem; font-weight:600; line-height:1.2;">
+                PART-WM
+              </div>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/compare/push_t_rough_baseline.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:1rem; font-weight:600; line-height:1.2;">
+                Baseline
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Flip object on a rough plane -->
+        <div class="is-size-3">
+
+          <h3 class="title is-4 has-text-centered" style="margin-top: 34px; margin-bottom: 14px;">
+            Flip object on a rough plane
+          </h3>
+
+          <div style="
+          display:flex;
+          justify-content:center;
+          align-items:flex-start;
+          gap:24px;
+          margin-top:0;
+        ">
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/compare/flip_cube_rough_pinwm.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:1rem; font-weight:600; line-height:1.2;">
+                PART-WM
+              </div>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/compare/flip_cube_rough_baseline.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:1rem; font-weight:600; line-height:1.2;">
+                Baseline
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Additional rigid-object demos -->
+        <div class="is-size-3">
+
+          <h3 class="title is-4 has-text-centered" style="margin-top: 38px; margin-bottom: 16px;">
+            Additional rigid-object push and flip demonstrations
+          </h3>
+
+          <div style="
+          display:flex;
+          flex-wrap:wrap;
+          justify-content:center;
+          gap:16px;
+          margin-top:0;
+        ">
+
+            <video class="video" playsinline muted controls src="static/videos/others/push_t_middle_1.mp4"
+              onplay="resizeAndPlay(this)" style="width:23%; height:auto; display:block;">
+            </video>
+
+            <video class="video" playsinline muted controls src="static/videos/others/push_t_middle_2.mp4"
+              onplay="resizeAndPlay(this)" style="width:23%; height:auto; display:block;">
+            </video>
+
+            <video class="video" playsinline muted controls src="static/videos/others/flip_cube_1.mp4"
+              onplay="resizeAndPlay(this)" style="width:23%; height:auto; display:block;">
+            </video>
+
+            <video class="video" playsinline muted controls src="static/videos/others/flip_cube_2.mp4"
+              onplay="resizeAndPlay(this)" style="width:23%; height:auto; display:block;">
+            </video>
+
+            <video class="video" playsinline muted controls src="static/videos/others/push_t_small_1.mp4"
+              onplay="resizeAndPlay(this)" style="width:23%; height:auto; display:block;">
+            </video>
+
+            <video class="video" playsinline muted controls src="static/videos/others/push_t_small_2.mp4"
+              onplay="resizeAndPlay(this)" style="width:23%; height:auto; display:block;">
+            </video>
+
+            <video class="video" playsinline muted controls src="static/videos/others/push_t_small_3.mp4"
+              onplay="resizeAndPlay(this)" style="width:23%; height:auto; display:block;">
+            </video>
+
+            <video class="video" playsinline muted controls src="static/videos/others/push_t_small_4.mp4"
+              onplay="resizeAndPlay(this)" style="width:23%; height:auto; display:block;">
+            </video>
+
+          </div>
+
+          <div style="text-align:center; margin-top:8px; font-size:1rem; font-weight:600; line-height:1.2;">
+            PART-WM
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================= ARTICULATED L-OBJECT EXPERIMENTS ========================= -->
+
+  <div style="
+  display:flex;
+  align-items:center;
+  margin:55px 0 35px 0;
+">
+    <div style="flex:1; height:2px; background:#d0d0d0;"></div>
+    <div style="flex:1; height:2px; background:#d0d0d0;"></div>
+  </div>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+
+        <h2 class="title is-2 has-text-centered">
+          Articulated L-Object Experiments
+        </h2>
+
+        <div style="
+        width:70px;
+        height:4px;
+        background:#d06cf0;
+        margin:10px auto 30px auto;
+        border-radius:2px;
+      "></div>
+
+        <!-- Push articulated L-object on a rough plane with high damping -->
+        <div class="is-size-3">
+
+          <h3 class="title is-4 has-text-centered" style="margin-top: 34px; margin-bottom: 14px;">
+            Push articulated L-object on a rough plane with high damping
+          </h3>
+
+          <div style="
+          display:flex;
+          justify-content:center;
+          align-items:flex-start;
+          gap:24px;
+          margin-top:0;
+        ">
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/articulated/compare/Low_Damp_1.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+                PART-WM (Low Damping)
+              </div>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/articulated/compare/High_Damp_1.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+                PART-WM (High Damping)
+              </div>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls
+                src="static/videos/articulated/compare/High_Damp_baseline_1.mp4" onplay="resizeAndPlay(this)"
+                style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+                Baseline (High Damping)
+              </div>
+            </div>
+          </div>
+
+          <div style="
+          display:flex;
+          justify-content:center;
+          align-items:flex-start;
+          gap:24px;
+          margin-top:16px;
+        ">
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/articulated/compare/Low_Damp_2.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+                PART-WM (Low Damping)
+              </div>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/articulated/compare/High_Damp_2.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+                PART-WM (High Damping)
+              </div>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls
+                src="static/videos/articulated/compare/High_Damp_baseline_2.mp4" onplay="resizeAndPlay(this)"
+                style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+                Baseline (High Damping)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Push articulated L-object on a slippery plane with low damping -->
+        <div class="is-size-3">
+
+          <h3 class="title is-4 has-text-centered" style="margin-top: 34px; margin-bottom: 14px;">
+            Push articulated L-object on a slippery plane with low damping
+          </h3>
+
+          <div style="
+          display:flex;
+          justify-content:center;
+          align-items:flex-start;
+          gap:24px;
+          margin-top:0;
+        ">
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls
+                src="static/videos/articulated/compare/High_friction_1.mp4" onplay="resizeAndPlay(this)"
+                style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+                PART-WM (High Friction)
+              </div>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/articulated/compare/Low_friction_1.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+                PART-WM (Low Friction)
+              </div>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls
+                src="static/videos/articulated/compare/Low_friction_baseline_1.mp4" onplay="resizeAndPlay(this)"
+                style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+                Baseline (Low Friction)
+              </div>
+            </div>
+          </div>
+
+          <div style="
+          display:flex;
+          justify-content:center;
+          align-items:flex-start;
+          gap:24px;
+          margin-top:16px;
+        ">
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls
+                src="static/videos/articulated/compare/High_friction_2.mp4" onplay="resizeAndPlay(this)"
+                style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+                PART-WM (High Friction)
+              </div>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/articulated/compare/Low_friction_2.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+                PART-WM (Low Friction)
+              </div>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls
+                src="static/videos/articulated/compare/Low_friction_baseline_2.mp4" onplay="resizeAndPlay(this)"
+                style="width:100%; height:auto; display:block;">
+              </video>
+              <div style="margin-top:2px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+                Baseline (Low Friction)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Push articulated L-object on a rough plane with low damping -->
+        <div class="is-size-3">
+
+          <h3 class="title is-4 has-text-centered" style="margin-top: 34px; margin-bottom: 14px;">
+            Push articulated L-object on a rough plane with low damping
+          </h3>
+
+          <div style="
+          display:flex;
+          justify-content:center;
+          align-items:flex-start;
+          gap:24px;
+          margin-top:0;
+        ">
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/articulated/others/H_F_L_D_1.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/articulated/others/H_F_L_D_2.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/articulated/others/H_F_L_D_3.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+            </div>
+          </div>
+
+          <div style="
+          display:flex;
+          justify-content:center;
+          align-items:flex-start;
+          gap:24px;
+          margin-top:16px;
+        ">
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/articulated/others/H_F_L_D_4.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/articulated/others/H_F_L_D_5.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+            </div>
+
+            <div style="flex:1; text-align:center;">
+              <video class="video" playsinline muted controls src="static/videos/articulated/others/H_F_L_D_6.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+            </div>
+          </div>
+
+          <div style="text-align:center; margin-top:8px; font-size:0.95rem; font-weight:600; line-height:1.2;">
+            PART-WM
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 
+  </div>
+  </section> -->
+
+
+  <!-- ========================= ANTI-SWAY EXPERIMENTS ========================= -->
+  <div style="
+  display:flex;
+  align-items:center;
+  margin:55px 0 35px 0;
+">
+    <div style="flex:1; height:2px; background:#d0d0d0;"></div>
+    <div style="flex:1; height:2px; background:#d0d0d0;"></div>
+  </div>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+
+        <h2 class="title is-2 has-text-centered">
+          Anti-Sway Experiments
+        </h2>
+
+        <div style="
+        width:70px;
+        height:4px;
+        background:#d06cf0;
+        margin:10px auto 28px auto;
+        border-radius:2px;
+      "></div>
+
+        <!-- explanation box -->
+        <div style="
+        background:#f5f5f5;
+        border-radius:10px;
+        padding:18px 22px;
+        margin-top:8px;
+        margin-bottom:34px;
+      ">
+          <p style="
+          font-size:0.98rem;
+          line-height:1.65;
+          color:#555;
+          text-align:justify;
+          margin:0;
+        ">
+            The Anti-Sway task includes both a demonstration video and corresponding quantitative plots to illustrate
+            how oscillations are suppressed during motion.<br><br>
+
+            Each plot group contains two subfigures: the upper plot shows the relative displacement Δpos of the robot
+            end-effector along the motion direction (with the initial position as the origin), illustrating the
+            trajectory from the start to the target position, while the lower plot shows the pendulum angle θ of the
+            suspended payload over time, reflecting the induced oscillatory dynamics.<br><br>
+
+            Before control begins, the robot performs a short random motion to generate an initial swing so that all
+            methods start from comparable swinging conditions; the gray-blue shaded region indicates when the control
+            policy starts executing.<br><br>
+
+            The objective of the Anti-Sway task is to move efficiently toward the target while minimizing oscillatory
+            motion. Small transient tilts are acceptable, but large back-and-forth oscillations should be avoided and
+            quickly damped.<br><br>
+
+            A successful Anti-Sway execution therefore moves efficiently toward the target while avoiding large
+            back-and-forth oscillations. When reaching the goal, small residual angles or velocities are acceptable, but
+            the oscillations should be quickly suppressed rather than left to decay naturally.
+          </p>
+        </div>
+
+        <!-- ******************* -->
+        <div class="is-size-3">
+
+          <div style="margin-top: 80px; margin-bottom: 18px;">
+            <h3 class="title is-4 has-text-centered" style="margin-bottom: 10px;">
+              High Damping
+            </h3>
+            <hr style="margin: 0; background-color: #dcdcdc; height: 2px; border: none;">
+          </div>
+
+          <!-- ================= CASE 1 ================= -->
+
+          <!-- PART-WM -->
+          <div style="
+    display:grid;
+    grid-template-columns: 1.05fr 1.9fr;
+    column-gap: 30px;
+    align-items:start;
+    margin-bottom: 55px;
+  ">
+
+            <div style="
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      margin-top: 13px;
+    ">
+              <video class="video" playsinline muted controls src="static/videos/AS_high_damping/camera_raw_1.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+
+              <div style="
+        margin-top:10px;
+        font-size:1.35rem;
+        line-height:1.1;
+        text-align:center;">
+                PART-WM
+              </div>
+            </div>
+
+            <div>
+              <img src="static/videos/AS_high_damping/cam_raw_1.png" style="width:100%; height:auto; display:block;">
+            </div>
+
+          </div>
+
+          <!-- Baseline -->
+          <div style="
+    display:grid;
+    grid-template-columns: 1.05fr 1.9fr;
+    column-gap: 30px;
+    align-items:start;
+    margin-bottom: 70px;
+  ">
+
+            <div style="
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      margin-top:13px;
+    ">
+              <video class="video" playsinline muted controls
+                src="static/videos/AS_high_damping/camera_raw_baseline_1.mp4" onplay="resizeAndPlay(this)"
+                style="width:100%; height:auto; display:block;">
+              </video>
+
+              <div style="
+        margin-top:10px;
+        font-size:1.35rem;
+        line-height:1.1;
+        text-align:center;">
+                Baseline
+              </div>
+            </div>
+
+            <div>
+              <img src="static/videos/AS_high_damping/cam_raw_baseline_1.png"
+                style="width:100%; height:auto; display:block;">
+            </div>
+
+          </div>
+
+        </div>
+        <!-- ******************* -->
+
+        <!-- ******************* -->
+        <div class="is-size-3">
+
+          <div style="margin-top: 80px; margin-bottom: 18px;">
+            <h3 class="title is-4 has-text-centered" style="margin-bottom: 10px;">
+              High Mass
+            </h3>
+            <hr style="margin: 0; background-color: #dcdcdc; height: 2px; border: none;">
+          </div>
+
+          <!-- ================= CASE 1 ================= -->
+
+          <!-- PART-WM -->
+          <div style="
+    display:grid;
+    grid-template-columns: 1.05fr 1.9fr;
+    column-gap: 30px;
+    align-items:start;
+    margin-bottom: 55px;
+  ">
+
+            <div style="
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      margin-top: 13px;
+    ">
+              <video class="video" playsinline muted controls src="static/videos/AS_high_mass/camera_raw_1.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+
+              <div style="
+        margin-top:10px;
+        font-size:1.35rem;
+        line-height:1.1;
+        text-align:center;">
+                PART-WM
+              </div>
+            </div>
+
+            <div>
+              <img src="static/videos/AS_high_mass/cam_raw_1.png" style="width:100%; height:auto; display:block;">
+            </div>
+
+          </div>
+
+          <!-- Baseline -->
+          <div style="
+    display:grid;
+    grid-template-columns: 1.05fr 1.9fr;
+    column-gap: 30px;
+    align-items:start;
+    margin-bottom: 70px;
+  ">
+
+            <div style="
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:flex-start;
+      margin-top:13px;
+    ">
+              <video class="video" playsinline muted controls src="static/videos/AS_high_mass/camera_raw_baseline_1.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+
+              <div style="
+        margin-top:10px;
+        font-size:1.35rem;
+        line-height:1.1;
+        text-align:center;">
+                Baseline
+              </div>
+            </div>
+
+            <div>
+              <img src="static/videos/AS_high_mass/cam_raw_baseline_1.png"
+                style="width:100%; height:auto; display:block;">
+            </div>
+
+          </div>
+
+        </div>
+        <!-- ******************* -->
+
+        <!-- ******************* -->
+        <div class="is-size-3">
+
+          <div style="margin-top: 80px; margin-bottom: 18px;">
+            <h3 class="title is-4 has-text-centered" style="margin-bottom: 10px;">
+              Low damping and low mass
+            </h3>
+            <hr style="margin: 0; background-color: #dcdcdc; height: 2px; border: none;">
+          </div>
+
+          <!-- ================= CASE 1 ================= -->
+
+          <!-- PART-WM -->
+          <div style="
+          display:grid;
+          grid-template-columns: 1.05fr 1.9fr;
+          column-gap: 30px;
+          align-items:start;
+          margin-bottom: 55px;
+        ">
+
+            <div style="
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:flex-start;
+            margin-top: 13px;
+          ">
+              <video class="video" playsinline muted controls src="static/videos/AntiSway/camera_raw_1.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+
+              <div style="
+              margin-top:10px;
+              font-size:1.35rem;
+              line-height:1.1;
+              text-align:center;">
+                PART-WM
+              </div>
+            </div>
+
+            <div>
+              <img src="static/videos/AntiSway/camera_raw_1.png" style="width:100%; height:auto; display:block;">
+            </div>
+
+          </div>
+
+          <!-- Baseline -->
+          <div style="
+          display:grid;
+          grid-template-columns: 1.05fr 1.9fr;
+          column-gap: 30px;
+          align-items:start;
+          margin-bottom: 70px;
+        ">
+
+            <div style="
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:flex-start;
+            margin-top:13px;
+          ">
+              <video class="video" playsinline muted controls src="static/videos/AntiSway/camera_raw_baseline_1.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+
+              <div style="
+              margin-top:10px;
+              font-size:1.35rem;
+              line-height:1.1;
+              text-align:center;">
+                Baseline
+              </div>
+            </div>
+
+            <div>
+              <img src="static/videos/AntiSway/camera_raw_baseline_1.png"
+                style="width:100%; height:auto; display:block;">
+            </div>
+
+          </div>
+
+          <!-- ================= CASE 2 ================= -->
+
+          <!-- PART-WM -->
+          <div style="
+          display:grid;
+          grid-template-columns: 1.05fr 1.9fr;
+          column-gap: 30px;
+          align-items:start;
+          margin-bottom: 55px;
+        ">
+
+            <div style="
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:flex-start;
+            margin-top:13px;
+          ">
+              <video class="video" playsinline muted controls src="static/videos/AntiSway/camera_raw_2.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+
+              <div style="
+              margin-top:10px;
+              font-size:1.35rem;
+              line-height:1.1;
+              text-align:center;">
+                PART-WM
+              </div>
+            </div>
+
+            <div>
+              <img src="static/videos/AntiSway/camera_raw_2.png" style="width:100%; height:auto; display:block;">
+            </div>
+
+          </div>
+
+          <!-- Baseline -->
+          <div style="
+          display:grid;
+          grid-template-columns: 1.05fr 1.9fr;
+          column-gap: 30px;
+          align-items:start;
+          margin-bottom: 20px;
+        ">
+
+            <div style="
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:flex-start;
+            margin-top:13px;
+          ">
+              <video class="video" playsinline muted controls src="static/videos/AntiSway/camera_raw_baseline_2.mp4"
+                onplay="resizeAndPlay(this)" style="width:100%; height:auto; display:block;">
+              </video>
+
+              <div style="
+              margin-top:10px;
+              font-size:1.35rem;
+              line-height:1.1;
+              text-align:center;">
+                Baseline
+              </div>
+            </div>
+
+            <div>
+              <img src="static/videos/AntiSway/camera_raw_baseline_2.png"
+                style="width:100%; height:auto; display:block;">
+            </div>
+
+          </div>
+
+        </div>
+        <!-- ******************* -->
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ========================= PAPER ABSTRACT ========================= -->
+  <div style="
+  display:flex;
+  align-items:center;
+  margin:55px 0 35px 0;
+">
+    <div style="flex:1; height:2px; background:#d0d0d0;"></div>
+    <div style="flex:1; height:2px; background:#d0d0d0;"></div>
+  </div>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+
+        <h2 class="title is-2 has-text-centered">
+          Abstract
+        </h2>
+
+        <div style="
+        width:70px;
+        height:4px;
+        background:#d06cf0;
+        margin:10px auto 28px auto;
+        border-radius:2px;
+      "></div>
+
+        <div style="
+        max-width:860px;
+        margin:auto;
+        text-align:justify;
+        font-size:1.02rem;
+        line-height:1.7;
+        color:#555;
+      ">
+
+          <p>
+            <b>While object manipulation is fundamental to real-world robotics,
+              its learning remains challenging due to the high sensitivity
+              to complex physical interactions involving friction and restitution.
+              The difficulty is further amplified for articulated objects,
+              whose motion is governed not only by external interactions
+              but also by internal kinematic constraints and joint-related dynamics.</b>
+          </p>
+
+          <p>
+            To achieve robust policy learning and generalization,
+            we opt to learn a world model of 3D rigid-body systems,
+            including articulated objects, and use it for model-based
+            reinforcement learning.
+            We propose <b>PART-WM</b>, a Physics-Aware Articulated World Model
+            that enables efficient end-to-end joint identification of
+            physical dynamics and kinematic structures from visual observations.
+            Adopting differentiable physics simulation,
+            <b>PART-WM can be learned with only few-shot and task-agnostic
+              physical interaction trajectories.</b>
+          </p>
+
+          <p>
+            Further, PART-WM is learned with observational loss induced by
+            Gaussian Splatting without requiring explicit state estimation.
+            To bridge Sim2Real gaps, we transform the learned PART-WM
+            into a group of physics-aware digital cousins via structured
+            randomizations that perturb rendering, physical, and structural
+            parameters, generating diverse yet physically consistent
+            model variations.
+          </p>
+
+          <p>
+            Extensive evaluations in both simulation and real-world settings
+            demonstrate that PART-WM, enhanced with physics-aware digital
+            cousins, facilitates robust articulated object manipulation
+            with effective Sim2Real transfer,
+            <b>outperforming state-of-the-art Real2Sim2Real methods.</b>
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ========================= METHOD ========================= -->
+
+  <div style="
+  display:flex;
+  align-items:center;
+  margin:55px 0 35px 0;
+">
+    <div style="flex:1; height:2px; background:#d0d0d0;"></div>
+    <div style="flex:1; height:2px; background:#d0d0d0;"></div>
+  </div>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+
+        <h2 class="title is-2 has-text-centered">
+          Method
+        </h2>
+
+        <div style="
+        width:70px;
+        height:4px;
+        background:#d06cf0;
+        margin:10px auto 28px auto;
+        border-radius:2px;
+      "></div>
+
+        <!-- pipeline figure -->
+        <div style="margin-bottom:30px;">
+          <img src="static/images/pipline.png" alt="Method Pipeline" style="width:100%; height:auto; display:block;">
+        </div>
+
+        <!-- ================= A ================= -->
+
+        <h3 class="title is-4 has-text-centered" style="margin-bottom:14px;">
+          A. Real2Sim World Model Identification
+        </h3>
+
+        <div style="
+        max-width:880px;
+        margin:auto;
+        text-align:justify;
+        font-size:1.02rem;
+        line-height:1.7;
+        color:#555;
+      ">
+
+          <p>
+            <b><i>(a) Rendering alignment</i></b>:
+            The robot captures multi-view observations in the target domain to estimate
+            the rendering parameters <i>&alpha;</i> of 2D Gaussian Splats,
+            providing a consistent visual representation of the scene and object appearance.
+          </p>
+
+          <p>
+            <b><i>(b) Geometry and mobility analysis</i></b>:
+            From the reconstructed observations, the method recovers object geometry
+            and estimates articulation-related structural parameters <i>&kappa;</i>,
+            including motion axes and reference points for movable parts.
+          </p>
+
+          <p>
+            <b><i>(c) Differentiable joint system identification</i></b>:
+            Given task-agnostic interaction data, the method jointly identifies
+            the physical parameters <i>&theta;</i> and the structural parameters <i>&kappa;</i>
+            by coupling visual observations with a differentiable constraint-based
+            physics solver.
+          </p>
+
+        </div>
+
+        <!-- ================= B ================= -->
+
+        <h3 class="title is-4 has-text-centered" style="margin-top:34px; margin-bottom:14px;">
+          B. Sim2Real Policy Transfer
+        </h3>
+
+        <div style="
+        max-width:880px;
+        margin:auto;
+        text-align:justify;
+        font-size:1.02rem;
+        line-height:1.7;
+        color:#555;
+      ">
+
+          <p>
+            <b><i>(d) Policy learning with physics-aware digital cousins</i></b>:
+            To account for residual uncertainty, the identified rendering parameters
+            <i>&alpha;</i>, physical parameters <i>&theta;</i>, and structural parameters
+            <i>&kappa;</i> are perturbed around their estimated values to construct
+            physics-aware digital cousins for robust policy training.
+          </p>
+
+          <p>
+            <b><i>(e) Zero-shot transfer to the target domain</i></b>:
+            Policies trained across these digital cousins achieve improved robustness
+            and can be directly deployed in the target domain without real-world
+            fine-tuning.
+          </p>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= BIBTEX ========================= -->
+
+  <!-- <div style="
+  display:flex;
+  align-items:center;
+  margin:55px 0 35px 0;
+">
+    <div style="flex:1; height:2px; background:#d0d0d0;"></div>
+    <div style="flex:1; height:2px; background:#d0d0d0;"></div>
+  </div>
+
+  <section class="hero teaser" id="BibTeX">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+
+        <h2 class="title is-2 has-text-centered">
+          BibTeX
+        </h2>
+
+        <div class="bibtex-header" style="
+        display:flex;
+        justify-content:flex-end;
+        align-items:center;
+        margin-bottom:10px;
+      ">
+          <button id="copy-bibtex-btn" class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard"
+            style="
+            border:none;
+            background:#f5f5f5;
+            padding:6px 10px;
+            border-radius:6px;
+            cursor:pointer;
+            font-size:0.9rem;
+            display:flex;
+            align-items:center;
+            gap:6px;
+          ">
+            <i class="fas fa-copy" id="copy-bibtex-icon"></i>
+            <span id="copy-bibtex-text">Copy</span>
+          </button>
+        </div>
+
+        <pre id="bibtex-code" style="
+        background:#f5f5f5;
+        border-radius:10px;
+        padding:18px;
+        font-size:0.9rem;
+        line-height:1.5;
+        overflow-x:auto;
+      "><code>@article{li2025pinwm,
+  title   = {PIN-WM: Learning Physics-Informed World Models for Non-Prehensile Manipulation},
+  author  = {Li, Wenxuan and Zhao, Hang and Yu, Zhiyuan and Du, Yu and Zou, Qin and Hu, Ruizhen and Xu, Kai},
+  journal = {arXiv preprint arXiv:2504.16693},
+  year    = {2025}
+}</code></pre>
+
+      </div>
+    </div>
+  </section> -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template"
+                target="_blank">Academic Project Page Template</a> which was adopted from the <a
+                href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              You are free to borrow the source code of this website, we just ask that you link back to this page in the
+              footer. <br> This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                Commons Attribution-ShareAlike 4.0 International License</a>.
+            </p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
