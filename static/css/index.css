@@ -133,5 +133,148 @@ body {
   font-size: smaller;
 }
 
+/* ===== Homepage only ===== */
+.home-hero .hero-body {
+  padding: 3.2rem 1.5rem 2.2rem;
+}
 
+.home-title {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin-bottom: 1.2rem !important;
+}
 
+.home-authors {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+}
+
+.home-author {
+  display: inline;
+  white-space: nowrap;
+}
+
+.home-authors a {
+  color: hsl(219, 79%, 56%) !important;
+  text-decoration: none !important;
+  position: relative;
+}
+
+.home-authors a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.08em;
+  width: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c86cf3 0%, #f06ca8 100%);
+  transition: width 0.22s ease;
+}
+
+.home-authors a:hover::after {
+  width: 100%;
+}
+
+.home-authors a:hover {
+  text-decoration: none !important;
+}
+
+.home-links .button {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 500;
+  border-radius: 999px !important;
+  padding-left: 1.15rem;
+  padding-right: 1.15rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.home-links a {
+  text-decoration: none !important;
+}
+
+.home-links a:hover {
+  text-decoration: none !important;
+}
+
+.home-link-block {
+  display: inline-block;
+  margin: 0 0.28rem;
+}
+
+/* *************************** **********************************************************************************/
+
+/* ===== Homepage only ===== */
+.home-hero .hero-body {
+  padding: 3.2rem 1.5rem 2.2rem;
+}
+
+.home-title {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin-bottom: 1.2rem !important;
+}
+
+.home-authors {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+}
+
+.home-author {
+  display: inline;
+  white-space: nowrap;
+}
+
+.home-authors a {
+  color: hsl(219, 79%, 56%) !important;
+  text-decoration: none !important;
+  position: relative;
+}
+
+.home-authors a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.08em;
+  width: 0;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c86cf3 0%, #f06ca8 100%);
+  transition: width 0.22s ease;
+}
+
+.home-authors a:hover::after {
+  width: 100%;
+}
+
+.home-authors a:hover {
+  text-decoration: none !important;
+}
+
+.home-links .button {
+  font-family: 'Google Sans', sans-serif;
+  font-weight: 500;
+  border-radius: 999px !important;
+  padding-left: 1.15rem;
+  padding-right: 1.15rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+.home-links a {
+  text-decoration: none !important;
+}
+
+.home-links a:hover {
+  text-decoration: none !important;
+}
+
+.home-link-block {
+  display: inline-block;
+  margin: 0 0.28rem;
+}
