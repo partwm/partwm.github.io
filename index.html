@@ -1448,14 +1448,14 @@
   </div>
 
   <section class="hero teaser">
-    <div class="container is-max-desktop">
-      <div class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
 
-        <h2 class="title is-2 has-text-centered">
-          Abstract
-        </h2>
+      <h2 class="title is-2 has-text-centered">
+        Abstract
+      </h2>
 
-        <div style="
+      <div style="
         width:70px;
         height:4px;
         background:#d06cf0;
@@ -1463,7 +1463,7 @@
         border-radius:2px;
       "></div>
 
-        <div style="
+      <div style="
         max-width:860px;
         margin:auto;
         text-align:justify;
@@ -1472,60 +1472,59 @@
         color:#555;
       ">
 
-          <!-- ✅ 只控制段间距 -->
-          <style>
-            .abstract-text p {
-              margin-bottom: 1.4em;
-            }
-          </style>
+        <style>
+          .abstract-text p {
+            margin-bottom: 1.4em;
+          }
+        </style>
 
-          <div class="abstract-text">
+        <div class="abstract-text">
 
-            <p>
-              <b>Robotic manipulation is fundamentally shaped by complex real-world dynamics,
-                involving both physical properties and kinematic structures in 3D rigid-body systems
-                ranging from single objects to articulated ones.</b>
-              Such complexity makes robust policy learning and generalization particularly challenging.
-            </p>
+          <p>
+            Object manipulation is a fundamental robotic skill, yet learning robust policies
+            remains challenging because the resulting motion depends in part on the object's
+            kinematic and dynamic properties.
+          </p>
 
-            <p>
-              To address this, we opt to learn a world model of 3D rigid-body dynamics
-              and leverage it for model-based reinforcement learning.
-              We propose <b>PART-WM</b>, a
-              <b>P</b>hysics-informed <b>Art</b>iculated <b>W</b>orld <b>M</b>odel
-              that automatically discovers kinematic structures and enables end-to-end
-              identification of physical parameters from visual observations.
-            </p>
+          <p>
+            We propose <b>PART-WM</b>, a Physics-Informed Articulated World Model for
+            3D rigid-body systems that enables end-to-end joint identification of kinematic
+            and physical parameters from visual observations.
+          </p>
 
-            <p>
-              By adopting differentiable physics simulation,
-              <b>PART-WM can be learned from only few-shot and task-agnostic
-                physical interaction trajectories.</b>
-              Further, PART-WM is optimized using observational loss induced by
-              Gaussian Splatting without requiring explicit state estimation.
-            </p>
+          <p>
+            PART-WM introduces differentiable articulated physics based on
+            convergence-masked solver unrolling, enabling stable gradient-based optimization
+            through residual-terminated constraint solves. We establish the asymptotic
+            consistency of the unrolled gradient with the corresponding implicit derivative.
+          </p>
 
-            <p>
-              To bridge the Sim2Real gap, we transform the learned PART-WM
-              into a group of <b>Digital Cousins</b> via physics-aware randomizations
-              over rendering, kinematic, and physical parameters,
-              generating diverse and meaningful variations of the model.
-            </p>
+          <p>
+            Combined with differentiable 2D Gaussian Splatting, this enables image-space
+            identification without explicit state estimation. The identified model then serves
+            as an interactive environment for model-based reinforcement learning without
+            requiring additional target-domain interaction.
+          </p>
 
-            <p>
-              Extensive evaluations in both simulation and real-world
-              demonstrate that PART-WM, enhanced with digital cousins,
-              enables robust manipulation with effective Sim2Real transfer,
-              <b>outperforming the Real2Sim2Real state-of-the-art.</b>
-            </p>
+          <p>
+            PART-WM also generates physics-aware digital cousins by perturbing identified
+            rendering, kinematic, and physical parameters for robust Sim2Real policy transfer.
+          </p>
 
-          </div>
+          <p>
+            Extensive evaluations show that PART-WM achieves the lowest one-step prediction
+            errors in simulation, while policies trained using the identified models exceed
+            the strongest competing baselines in average success rate by
+            <b>53.0 percentage points in simulation and 43.4 percentage points in the real world.</b>
+          </p>
 
         </div>
 
       </div>
+
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ========================= METHOD ========================= -->
 
